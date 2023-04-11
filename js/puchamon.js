@@ -1,6 +1,7 @@
 alert("Bienvenid@ maestr@ puchamon 😊")
 
 let ataqueJugador
+let ataqueEnemigo
 
 function iniciarJuego () {
     let botonPuchamonJugador = document.getElementById('boton-puchamon')
@@ -75,24 +76,24 @@ function seleccionarPuchamonJugador() {
 }
 
 function seleccionarPuchamonEnemigo() {
-    let ataqueAleatorio = aleatorio (1,9)
+    let puchamonAleatorio = aleatorio (1,9)
     let spanPuchamonEnemigo = document.getElementById('puchamon-enemigo')
 
-    if (ataqueAleatorio == 1){
+    if (puchamonAleatorio == 1){
         spanPuchamonEnemigo.innerHTML = 'Pitochu' 
-    } else if (ataqueAleatorio == 2) {
+    } else if (puchamonAleatorio == 2) {
         spanPuchamonEnemigo.innerHTML = 'Chorizard'
-    } else if (ataqueAleatorio == 3) {
+    } else if (puchamonAleatorio == 3) {
         spanPuchamonEnemigo.innerHTML = 'Pendertuga'
-    } else if (ataqueAleatorio == 4) {
+    } else if (puchamonAleatorio == 4) {
         spanPuchamonEnemigo.innerHTML = 'Baculao'
-    } else if (ataqueAleatorio == 5) {
+    } else if (puchamonAleatorio == 5) {
         spanPuchamonEnemigo.innerHTML = 'Motapod'
-    } else if (ataqueAleatorio == 6) {
+    } else if (puchamonAleatorio == 6) {
         spanPuchamonEnemigo.innerHTML = 'Mojonix'
-    } else if (ataqueAleatorio == 7) {
+    } else if (puchamonAleatorio == 7) {
         spanPuchamonEnemigo.innerHTML = 'Langostelvis'
-    } else if (ataqueAleatorio == 8) {
+    } else if (puchamonAleatorio == 8) {
         spanPuchamonEnemigo.innerHTML = 'Tucapalma'
     } else {
          spanPuchamonEnemigo.innerHTML = 'Pydos'
@@ -101,27 +102,43 @@ function seleccionarPuchamonEnemigo() {
 
 function ataqueRayo() {
     ataqueJugador = 'RAYO⚡'
-    alert(ataqueJugador)
+    ataqueAleatorioEnemigo()
 }
 
 function ataqueFuego() {
     ataqueJugador = 'FUEGO🔥'
-    alert(ataqueJugador)
+    ataqueAleatorioEnemigo()
 }
 
 function ataqueAgua() {
     ataqueJugador = 'AGUA💧'
-    alert(ataqueJugador)
+    ataqueAleatorioEnemigo()
 }
 
 function ataqueHierva() {
     ataqueJugador = 'HIERVA🌱'
-    alert(ataqueJugador)
+    ataqueAleatorioEnemigo()
 }
 
 function ataquePiedra(){
     ataqueJugador = 'PIEDRA🥌'
-    alert(ataqueJugador)
+    ataqueAleatorioEnemigo()
+}
+
+function ataqueAleatorioEnemigo() {
+    let ataqueAleatorio = aleatorio(1,5) 
+
+    if (ataqueAleatorio == 1) {
+        ataqueEnemigo = 'RAYO⚡'
+    } else if (ataqueAleatorio == 2) {
+        ataqueEnemigo = 'FUEGO🔥'
+    } else if (ataqueAleatorio == 3) {
+        ataqueEnemigo = 'AGUA💧'
+    } else if (ataqueAleatorio == 4) {
+        ataqueEnemigo = 'HIERVA🌱'
+    } else {
+        ataqueEnemigo = 'PIEDRA🥌'
+    }
 }
 
 function aleatorio(min, max) {
