@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/js/puchamon.js"></script>
+    <title>Puchamon</title>
+</head>
+<body>
+    <h1>Puchamon tienes que atraparlos a todos ⚡🔥💧🌱🥌</h1>
+
+    <section id="seleccionar-puchamon">
+        
+        <h2>Elige a tu puchamon:</h2>
+
+        <label for="Pitochu">Pitochu</label>
+        <input type="radio" name="puchamon" id="Pitochu">
+
+        <label for="Chorizard">Chorizard</label>        
+        <input type="radio" name="puchamon" id="Chorizard">
+
+        <label for="Pendertuga">Pendertuga</label>
+        <input type="radio" name="puchamon" id="Pendertuga">
+
+        <label for="Baculao">Baculao</label>
+        <input type="radio" name="puchamon" id="Baculao">
+
+        <label for="Motapod">Motapod</label>
+        <input type="radio" name="puchamon" id="Motapod">
+
+        <label for="Mojonix">Mojonix</label>
+        <input type="radio" name="puchamon" id="Mojonix">
+
+        <label for="Langostelvis">Langostelvis</label>
+        <input type="radio" name="puchamon" id="Langostelvis">
+
+        <label for="Tucapalma">Tucapalma</label>
+        <input type="radio" name="puchamon" id="Tucapalma">
+
+        <label for="Pydos">Pydos</label>
+        <input type="radio" name="puchamon" id="Pydos">
+
+        <!-- 
+        Pitochu -> Rayo⚡
+        Chorizard -> Fuego🔥
+        Pendertuga -> Agua💧
+        Baculao -> Agua💧
+        Motapod -> Hierva🌱
+        Mojonix -> Piedra🥌
+        Langostelvis -> Agua💧 y Fuego🔥
+        Tucapalma -> Agua💧 y Piedra🥌
+        Pydos -> Piedra🥌 y Fuego🔥-->
+
+        <button id="boton-puchamon">Seleccionar</button>
+
+    </section>
+
+    <section id="seleccionar-ataque">
+        
+        <h2>Elige tu ataque:</h2>
+
+        <p>Tu puchamon <span id="puchamon-jugador"></span> tiene <span>3</span> vidas 💗</p>
+        <p>El puchamon enemigo <span id="puchamon-enemigo"></span> tiene</span> <span>3</span> vidas 🖤</p>
+        
+        <p>
+            <button id="boton-rayo">Rayo⚡</button>
+            <button id="boton-fuego">Fuego🔥</button>
+            <button id="boton-agua">Agua💧</button>
+            <button id="boton-hierva">Hierva🌱</button>
+            <button id="boton-piedra">Piedra🥌</button>
+        </p>
+     </section>
+
+     <section id="mensajes">
+        <p>Tu puchamnon ataco con Fuego🔥, el puchamon enemigo ataco con Hierva🌱 - GANASTE🎉</p>
+     </section>
+     
+     <section id="reiniciar">
+        <button id="boton-reiniciar">reiniciar</button>
+     </section>
+
+</body>
+</html>
