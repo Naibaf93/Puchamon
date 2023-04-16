@@ -140,13 +140,25 @@ function ataqueAleatorioEnemigo() {
         ataqueEnemigo = 'PIEDRA🥌'
     }
 
-    crearMensaje()
+    combate()
 }
 
-function crearMensaje() {
+//combate
+
+function combate() {
+    if(ataqueJugador == ataqueEnemigo) {
+        crearMensaje("EMPATE😐");
+    } else if(ataqueJugador == 'RAYO⚡' && ataqueEnemigo == 'AGUA💧' || ataqueJugador == 'RAYO⚡' && ataqueEnemigo == 'FUEGO🔥' || ataqueJugador == 'RAYO⚡' && ataqueEnemigo == 'HIERVA🌱' || ataqueJugador == 'AGUA💧' && ataqueEnemigo == 'FUEGO🔥' || ataqueJugador == 'AGUA💧' && ataqueEnemigo == 'PIEDRA🥌' || ataqueJugador == 'FUEGO🔥' && ataqueEnemigo == 'HIERVA🌱' || ataqueJugador == 'HIERVA🌱' && ataqueEnemigo == 'PIEDRA🥌' || ataqueJugador == 'HIERVA🌱' && ataqueEnemigo == 'AGUA💧' || ataqueJugador == 'PIEDRA🥌' && ataqueEnemigo == 'RAYO⚡' || ataqueJugador == 'PIEDRA🥌' && ataqueEnemigo == 'FUEGO🔥') {
+        crearMensaje("GANASTE🎉");
+    } else {
+        crearMensaje ("PERDISTE😔")
+    }
+}
+
+function crearMensaje(resultado) {
     let sectionMensajes = document.getElementById('mensajes')
     let parrafo = document.createElement('p')
-    parrafo.innerHTML = 'Tu puchamnon ataco con ' + ataqueJugador + ', el puchamon enemigo ataco con ' + ataqueEnemigo + '- PENDIENTE🎉'
+    parrafo.innerHTML = 'Tu puchamnon ataco con ' + ataqueJugador + ', el puchamon enemigo ataco con ' + ataqueEnemigo + '- ' + resultado
 
     sectionMensajes.appendChild(parrafo)
 } 
