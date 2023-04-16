@@ -16,7 +16,10 @@ function iniciarJuego () {
     let botonHierva = document.getElementById ('boton-hierva')
     botonHierva.addEventListener('click', ataqueHierva)
     let botonPiedra = document.getElementById ('boton-piedra')
-    botonPiedra.addEventListener('click', ataquePiedra) 
+    botonPiedra.addEventListener('click', ataquePiedra)
+    let botonBicho = document.getElementById ('boton-bicho')
+    botonBicho.addEventListener('click', ataqueBicho) 
+ 
     
 }
 
@@ -30,6 +33,7 @@ function seleccionarPuchamonJugador() {
     let inputLangostelvis = document.getElementById('Langostelvis')
     let inputTucapalma = document.getElementById('Tucapalma')
     let inputPydos = document.getElementById('Pydos')
+    let inputHongusaur = document.getElementById('Hongusaur')
     let spanPuchamonJugador = document.getElementById('puchamon-jugador')
 
     alert('Seleccionaste tu puchamon')
@@ -50,8 +54,8 @@ function seleccionarPuchamonJugador() {
         spanPuchamonJugador.innerHTML = 'Baculao💧'
     }
     else if (inputMotapod.checked == true) {
-        alert("Has elegido a Motapod🌱")
-        spanPuchamonJugador.innerHTML = 'Motapod🌱'
+        alert("Has elegido a Motapod🐛")
+        spanPuchamonJugador.innerHTML = 'Motapod🐛'
     }
     else if (inputMojonix.checked == true) {
         alert("Has elegido a Mojonix🥌")
@@ -68,7 +72,13 @@ function seleccionarPuchamonJugador() {
     else if (inputPydos.checked == true) {
         alert("Has elegido a Pydos🥌🔥")
         spanPuchamonJugador.innerHTML = 'Pydos🥌🔥'
-    } else {
+    }
+    else if (inputHongusaur.checked == true) {
+        alert("Has elegido a Hongusaur🌱")
+        spanPuchamonJugador.innerHTML = 'Hongusaur🌱'
+        
+    }
+    else {
         alert("No has elegido ningun puchamon🤨")
     }
 
@@ -95,6 +105,8 @@ function seleccionarPuchamonEnemigo() {
         spanPuchamonEnemigo.innerHTML = 'Langostelvis'
     } else if (puchamonAleatorio == 8) {
         spanPuchamonEnemigo.innerHTML = 'Tucapalma'
+    }else if (puchamonAleatorio == 9) {
+        spanPuchamonEnemigo.innerHTML = 'Hongusaur'
     } else {
          spanPuchamonEnemigo.innerHTML = 'Pydos'
     } 
@@ -125,6 +137,11 @@ function ataquePiedra(){
     ataqueAleatorioEnemigo()
 }
 
+function ataqueBicho() {
+    ataqueJugador = 'BICHO🐛'
+    ataqueAleatorioEnemigo()
+}
+
 function ataqueAleatorioEnemigo() {
     let ataqueAleatorio = aleatorio(1,5) 
 
@@ -136,6 +153,8 @@ function ataqueAleatorioEnemigo() {
         ataqueEnemigo = 'AGUA💧'
     } else if (ataqueAleatorio == 4) {
         ataqueEnemigo = 'HIERVA🌱'
+    }else if (ataqueAleatorio == 5) {
+        ataqueEnemigo = 'BICHO🐛'
     } else {
         ataqueEnemigo = 'PIEDRA🥌'
     }
@@ -148,7 +167,7 @@ function ataqueAleatorioEnemigo() {
 function combate() {
     if(ataqueJugador == ataqueEnemigo) {
         crearMensaje("EMPATE😐");
-    } else if(ataqueJugador == 'RAYO⚡' && ataqueEnemigo == 'AGUA💧' || ataqueJugador == 'RAYO⚡' && ataqueEnemigo == 'FUEGO🔥' || ataqueJugador == 'RAYO⚡' && ataqueEnemigo == 'HIERVA🌱' || ataqueJugador == 'AGUA💧' && ataqueEnemigo == 'FUEGO🔥' || ataqueJugador == 'AGUA💧' && ataqueEnemigo == 'PIEDRA🥌' || ataqueJugador == 'FUEGO🔥' && ataqueEnemigo == 'HIERVA🌱' || ataqueJugador == 'HIERVA🌱' && ataqueEnemigo == 'PIEDRA🥌' || ataqueJugador == 'HIERVA🌱' && ataqueEnemigo == 'AGUA💧' || ataqueJugador == 'PIEDRA🥌' && ataqueEnemigo == 'RAYO⚡' || ataqueJugador == 'PIEDRA🥌' && ataqueEnemigo == 'FUEGO🔥') {
+    } else if(ataqueJugador == 'RAYO⚡' && ataqueEnemigo == 'AGUA💧' || ataqueJugador == 'RAYO⚡' && ataqueEnemigo == 'FUEGO🔥' || ataqueJugador == 'RAYO⚡' && ataqueEnemigo == 'HIERVA🌱'|| ataqueJugador == 'RAYO⚡' && ataqueEnemigo == 'BICHO🐛' || ataqueJugador == 'AGUA💧' && ataqueEnemigo == 'FUEGO🔥' || ataqueJugador == 'AGUA💧' && ataqueEnemigo == 'PIEDRA🥌' || ataqueJugador == 'FUEGO🔥' && ataqueEnemigo == 'HIERVA🌱' || ataqueJugador == 'FUEGO🔥' && ataqueEnemigo == 'BICHO🐛' || ataqueJugador == 'HIERVA🌱' && ataqueEnemigo == 'PIEDRA🥌' || ataqueJugador == 'HIERVA🌱' && ataqueEnemigo == 'AGUA💧' || ataqueJugador == 'PIEDRA🥌' && ataqueEnemigo == 'RAYO⚡' || ataqueJugador == 'PIEDRA🥌' && ataqueEnemigo == 'FUEGO🔥'|| ataqueJugador == 'PIEDRA🥌' && ataqueEnemigo == 'BICHO🐛' || ataqueJugador == 'BICHO🐛' && ataqueEnemigo == 'HIERVA🌱' || ataqueJugador == 'BICHO🐛' && ataqueEnemigo == 'AGUA💧') {
         crearMensaje("GANASTE🎉");
     } else {
         crearMensaje ("PERDISTE😔")
