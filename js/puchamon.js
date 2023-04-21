@@ -2,6 +2,9 @@ alert("Bienvenid@ maestr@ puchamon 😊")
 
 let ataqueJugador
 let ataqueEnemigo
+let vidasJugador = 3
+let vidasEnemigo = 3
+
 
 function iniciarJuego () {
     let botonPuchamonJugador = document.getElementById('boton-puchamon')
@@ -178,12 +181,19 @@ function ataqueAleatorioEnemigo() {
 //combate
 
 function combate() {
+    let spanVidasJugador = document.getElementById('vidas-jugador')
+    let spanVidasEnemigo = document.getElementById('vidas-enemigo')
+
     if(ataqueJugador == ataqueEnemigo) {
         crearMensaje("EMPATE😐");
     } else if(ataqueJugador == 'RAYO⚡' && ataqueEnemigo == 'AGUA💧' || ataqueJugador == 'RAYO⚡' && ataqueEnemigo == 'FUEGO🔥' || ataqueJugador == 'RAYO⚡' && ataqueEnemigo == 'HIERVA🌱'|| ataqueJugador == 'RAYO⚡' && ataqueEnemigo == 'BICHO🐛' || ataqueJugador == 'RAYO⚡' && ataqueEnemigo == 'HIELO❄' || ataqueJugador == 'AGUA💧' && ataqueEnemigo == 'FUEGO🔥' || ataqueJugador == 'AGUA💧' && ataqueEnemigo == 'PIEDRA🥌' || ataqueJugador == 'FUEGO🔥' && ataqueEnemigo == 'HIERVA🌱' || ataqueJugador == 'FUEGO🔥' && ataqueEnemigo == 'BICHO🐛' || ataqueJugador == 'FUEGO🔥' && ataqueEnemigo == 'HIELO❄' || ataqueJugador == 'HIERVA🌱' && ataqueEnemigo == 'PIEDRA🥌' || ataqueJugador == 'HIERVA🌱' && ataqueEnemigo == 'AGUA💧' || ataqueJugador == 'PIEDRA🥌' && ataqueEnemigo == 'RAYO⚡' || ataqueJugador == 'PIEDRA🥌' && ataqueEnemigo == 'FUEGO🔥'|| ataqueJugador == 'PIEDRA🥌' && ataqueEnemigo == 'BICHO🐛' || ataqueJugador == 'PIEDRA🥌' && ataqueEnemigo == 'HIELO❄' || ataqueJugador == 'BICHO🐛' && ataqueEnemigo == 'HIERVA🌱' || ataqueJugador == 'BICHO🐛' && ataqueEnemigo == 'AGUA💧' || ataqueJugador == 'HIELO❄' && ataqueEnemigo == 'HIERVA🌱' || ataqueJugador == 'HIELO❄' && ataqueEnemigo == 'AGUA💧' || ataqueJugador == 'HIELO❄' && ataqueEnemigo == 'BICHO🐛') {
         crearMensaje("GANASTE🎉");
+        vidasEnemigo--
+        spanVidasEnemigo.innerHTML = vidasEnemigo
     } else {
         crearMensaje ("PERDISTE😔")
+        vidasJugador--
+        spanVidasJugador.innerHTML = vidasJugador
     }
 }
 
