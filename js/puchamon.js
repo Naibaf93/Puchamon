@@ -24,6 +24,9 @@ function iniciarJuego () {
     botonBicho.addEventListener('click', ataqueBicho) 
     let botonHielo = document.getElementById ('boton-hielo')
     botonHielo.addEventListener('click', ataqueHielo) 
+
+    let botonReiniciar = document.getElementById('boton-reiniciar')
+    botonReiniciar.addEventListener('click', reiniciarJuego)
 }
 
 function seleccionarPuchamonJugador() {
@@ -220,7 +223,27 @@ function crearMensajeFinal(resultadoFinal) {
     let parrafo = document.createElement('p')
     parrafo.innerHTML = resultadoFinal
     sectionMensajes.appendChild(parrafo)
+
+    let botonRayo = document.getElementById ('boton-rayo')
+    botonRayo.disabled = true
+    let botonFuego = document.getElementById ('boton-fuego')
+    botonFuego.disabled = true
+    let botonAgua = document.getElementById ('boton-agua')
+    botonAgua.disabled = true
+    let botonHierva = document.getElementById ('boton-hierva')
+    botonHierva.disabled = true
+    let botonPiedra = document.getElementById ('boton-piedra')
+    botonPiedra.disabled = true
+    let botonBicho = document.getElementById ('boton-bicho')
+    botonBicho.disabled = true
+    let botonHielo = document.getElementById ('boton-hielo')
+    botonHielo.disabled = true 
+
 } 
+
+function reiniciarJuego(){
+    location.reload()
+}
 
 
 function aleatorio(min, max) {
