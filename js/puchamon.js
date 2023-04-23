@@ -7,6 +7,13 @@ let vidasEnemigo = 3
 
 
 function iniciarJuego () {
+
+    let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque')
+    sectionSeleccionarAtaque.style.display = 'none'
+
+    let sectionReiniciar = document.getElementById('reiniciar')
+    sectionReiniciar.style.display = 'none'
+
     let botonPuchamonJugador = document.getElementById('boton-puchamon')
     botonPuchamonJugador.addEventListener('click', seleccionarPuchamonJugador)
 
@@ -30,6 +37,13 @@ function iniciarJuego () {
 }
 
 function seleccionarPuchamonJugador() {
+
+    let sectionSeleccionarPuchamon = document.getElementById('seleccionar-puchamon')
+    sectionSeleccionarPuchamon.style.display = 'none'
+
+    let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque')
+    sectionSeleccionarAtaque.style.display = 'block'
+
     let inputPitochu = document.getElementById('Pitochu')
     let inputChorizard = document.getElementById('Chorizard')
     let inputPendertuga = document.getElementById('Pendertuga')
@@ -237,7 +251,11 @@ function crearMensajeFinal(resultadoFinal) {
     let botonBicho = document.getElementById ('boton-bicho')
     botonBicho.disabled = true
     let botonHielo = document.getElementById ('boton-hielo')
-    botonHielo.disabled = true 
+    botonHielo.disabled = true
+    
+    let sectionReiniciar = document.getElementById('reiniciar')
+    sectionReiniciar.style.display = 'block'
+
 
 } 
 
